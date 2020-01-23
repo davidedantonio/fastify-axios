@@ -1,0 +1,34 @@
+{
+  "name": "fastify-axios",
+  "version": "1.0.0",
+  "description": "Decorate fastify instance with axios module",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tap test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidedantonio/fastify-axios.git"
+  },
+  "keywords": [
+    "fastify",
+    "axios",
+    "nodejs"
+  ],
+  "author": "Davide D'Antonio <davide.dantonio@webeetle.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidedantonio/fastify-axios/issues"
+  },
+  "homepage": "https://github.com/davidedantonio/fastify-axios#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fastify-plugin": "^1.6.0"
+  },
+  "devDependencies": {
+    "fastify": "^2.11.0",
+    "pre-commit": "^1.2.2",
+    "standard": "^14.3.1",
+    "tap": "^14.10.6"
+  }
+}
