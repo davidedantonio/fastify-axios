@@ -1,6 +1,6 @@
 {
   "name": "fastify-axios",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Decorate fastify instance with axios http client",
   "main": "index.js",
   "scripts": {
