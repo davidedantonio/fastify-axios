@@ -45,11 +45,11 @@ test('fastify.axios should be an axios instance', t => {
 test('verify default args', t => {
   t.plan(2)
   const fastify = Fastify()
-  fastify.register(axiosPlugin, { baseUrl: 'https://nodejs.org' })
+  fastify.register(axiosPlugin, { baseURL: 'https://nodejs.org' })
 
   fastify.ready(async err => {
     t.error(err)
-    t.equal(fastify.axios.defaults.baseUrl, 'https://nodejs.org')
+    t.equal(fastify.axios.defaults.baseURL, 'https://nodejs.org')
 
     fastify.close()
   })
@@ -74,16 +74,17 @@ test('fastify.axios works well', t => {
 test('fastify.axios register multiple clients', t => {
   t.plan(26)
   const fastify = Fastify()
-  const clients = {
-    nodejs: {
-      baseUrl: 'https://nodejs.org'
-    },
-    google: {
-      baseUrl: 'https://google.com'
-    }
-  }
 
-  fastify.register(axiosPlugin, { clients: clients })
+  fastify.register(axiosPlugin, {
+    clients: {
+      nodejs: {
+        baseURL: 'https://nodejs.org'
+      },
+      google: {
+        baseURL: 'https://google.com'
+      }
+    }
+  })
 
   fastify.ready(async err => {
     t.error(err)
@@ -98,7 +99,7 @@ test('fastify.axios register multiple clients', t => {
     t.ok(fastify.axios.nodejs.delete)
     t.ok(fastify.axios.nodejs.head)
     t.ok(fastify.axios.nodejs.request)
-    t.equal(fastify.axios.nodejs.defaults.baseUrl, 'https://nodejs.org')
+    t.equal(fastify.axios.nodejs.defaults.baseURL, 'https://nodejs.org')
 
     t.ok(fastify.axios.google)
     t.ok(fastify.axios instanceof Object)
@@ -112,7 +113,7 @@ test('fastify.axios register multiple clients', t => {
     t.ok(fastify.axios.google.delete)
     t.ok(fastify.axios.google.head)
     t.ok(fastify.axios.google.request)
-    t.equal(fastify.axios.google.defaults.baseUrl, 'https://google.com')
+    t.equal(fastify.axios.google.defaults.baseURL, 'https://google.com')
 
     fastify.close()
   })
