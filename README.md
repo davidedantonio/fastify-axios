@@ -29,7 +29,7 @@ module.exports = async function (fastify, opts, next) {
 }
 ```
 
-Alternatively you can specify default args to your axios instance. You can take a look at the default parameters here [https://github.com/axios/axios#request-config](https://github.com/axios/axios):
+Alternatively you can specify default args to your axios instance. You can take a look at the default parameters here [https://github.com/axios/axios](https://github.com/axios/axios#request-config):
 
 
 ```javascript
