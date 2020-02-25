@@ -7,7 +7,7 @@ const Fastify = require('fastify')
 const axiosPlugin = require('./index')
 
 test('fastify.axios intance and instance.methods exists', t => {
-  t.plan(11)
+  t.plan(12)
   const fastify = Fastify()
   fastify.register(axiosPlugin, {})
 
@@ -23,12 +23,13 @@ test('fastify.axios intance and instance.methods exists', t => {
     t.ok(fastify.axios.delete)
     t.ok(fastify.axios.head)
     t.ok(fastify.axios.request)
+    t.same(fastify.axios.defaultArgs, undefined)
 
     fastify.close()
   })
 })
 
-test('fastify.axios should be an instance Axios', t => {
+test('fastify.axios should be an axios instance', t => {
   t.plan(2)
   const fastify = Fastify()
   fastify.register(axiosPlugin)
@@ -36,6 +37,19 @@ test('fastify.axios should be an instance Axios', t => {
   fastify.ready(err => {
     t.error(err)
     t.ok(fastify.axios instanceof Function)
+
+    fastify.close()
+  })
+})
+
+test('verify default args', t => {
+  t.plan(2)
+  const fastify = Fastify()
+  fastify.register(axiosPlugin, { baseUrl: 'https://nodejs.org' })
+
+  fastify.ready(async err => {
+    t.error(err)
+    t.equal(fastify.axios.defaults.baseUrl, 'https://nodejs.org')
 
     fastify.close()
   })
