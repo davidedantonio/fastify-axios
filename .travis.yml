@@ -6,6 +6,13 @@ node_js:
   - "11"
   - "10"
 
+install:
+  - npm install -g codecov
+
+script:
+  - npm run coverage
+  - npm run report-coverage
+
 notifications:
   email:
     on_success: never

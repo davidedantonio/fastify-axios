@@ -72,7 +72,7 @@ test('fastify.axios works well', t => {
 })
 
 test('fastify.axios register multiple clients', t => {
-  t.plan(24)
+  t.plan(26)
   const fastify = Fastify()
   const clients = {
     nodejs: {
@@ -98,6 +98,7 @@ test('fastify.axios register multiple clients', t => {
     t.ok(fastify.axios.nodejs.delete)
     t.ok(fastify.axios.nodejs.head)
     t.ok(fastify.axios.nodejs.request)
+    t.equal(fastify.axios.nodejs.defaults.baseUrl, 'https://nodejs.org')
 
     t.ok(fastify.axios.google)
     t.ok(fastify.axios instanceof Object)
@@ -111,6 +112,7 @@ test('fastify.axios register multiple clients', t => {
     t.ok(fastify.axios.google.delete)
     t.ok(fastify.axios.google.head)
     t.ok(fastify.axios.google.request)
+    t.equal(fastify.axios.google.defaults.baseUrl, 'https://google.com')
 
     fastify.close()
   })
