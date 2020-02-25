@@ -1,6 +1,6 @@
 # fastify-axios
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/davidedantonio/fastify-axios.svg)](https://greenkeeper.io/)
 
 A plugin for Fastify that adds support for sending requests via [`axios`](https://github.com/axios/axios), a promise based HTTP(s) client for node.js and browser.
 
