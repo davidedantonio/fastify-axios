@@ -5,16 +5,12 @@ const axios = require('axios')
 
 async function fastifyAxios (fastify, opts) {
   const { clients = {}, ...defaultArgs } = opts
-  let instance = null
+  const instance = axios.create(defaultArgs)
 
-  if (Object.keys(clients).length === 0) {
-    instance = axios.create(defaultArgs)
-  } else {
-    instance = {}
+  if (Object.keys(clients).length !== 0) {
     for (const name of Object.keys(clients)) {
-      Object.defineProperty(instance, name, {
-        value: axios.create(clients[name]),
-        writable: false
+      Object.assign(instance, {
+        [name]: axios.create(clients[name])
       })
     }
   }

@@ -40,7 +40,7 @@ Alternatively you can specify default args to your axios instance. You can take 
 
 module.exports = async function (fastify, opts) {
   fastify.register(require('fastify-axios'), {
-    baseUrl: 'https://nodejs.org'
+    baseURL: 'https://nodejs.org'
   })
 
   // request via axios.get to https://nodejs.org/en/
@@ -59,16 +59,18 @@ It's possibile to add more than one `axios` client to your fastify instance. Her
 
 module.exports = async function (fastify, opts) {
   fastify.register(require('fastify-axios'), {
-    v1: {
-      baseUrl: 'https://v1.api.com',
-      headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJxyz'
-      }
-    },
-    v2: {
-      baseUrl: 'https://v2.api.com',
-      headers: {
-        'Authorization': 'Bearer UtOkO3UI9lPY1h3h9ygTn8pD0Va2pFDcWCNbSKlf2HE'
+    clients: {
+      v1: {
+        baseURL: 'https://v1.api.com',
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJxyz'
+        }
+      },
+      v2: {
+        baseURL: 'https://v2.api.com',
+        headers: {
+          'Authorization': 'Bearer UtOkO3UI9lPY1h3h9ygTn8pD0Va2pFDcWCNbSKlf2HE'
+        }
       }
     }
   })
