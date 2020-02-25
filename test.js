@@ -23,7 +23,7 @@ test('fastify.axios intance and instance.methods exists', t => {
     t.ok(fastify.axios.delete)
     t.ok(fastify.axios.head)
     t.ok(fastify.axios.request)
-    t.same(fastify.axios.defaultArgs, undefined)
+    t.equal(fastify.axios.defaults.defaultArgs, undefined)
 
     fastify.close()
   })
