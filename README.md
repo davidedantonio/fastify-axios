@@ -1,5 +1,7 @@
 # fastify-axios
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+
 A plugin for Fastify that adds support for sending requests via [`axios`](https://github.com/axios/axios), a promise based HTTP(s) client for node.js and browser.
 
 Under the hood axios is used, the options passed to register will be used as the default arguments while creating the axios http client.
