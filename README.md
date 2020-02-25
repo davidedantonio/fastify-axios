@@ -22,7 +22,7 @@ You can access the `axios` instance via fastify.axios, which can be used to send
 ```javascript
 'use strict'
 
-module.exports = async function (fastify, opts, next) {
+module.exports = async function (fastify, opts) {
   fastify.register(require('fastify-axios'))
 
   // request via axios.get
@@ -38,7 +38,7 @@ Alternatively you can specify default args to your axios instance. You can take 
 ```javascript
 'use strict'
 
-module.exports = async function (fastify, opts, next) {
+module.exports = async function (fastify, opts) {
   fastify.register(require('fastify-axios'), {
     baseUrl: 'https://nodejs.org'
   })
@@ -57,7 +57,7 @@ It's possibile to add more than one `axios` client to your fastify instance. Her
 ```javascript
 'use strict'
 
-module.exports = async function (fastify, opts, next) {
+module.exports = async function (fastify, opts) {
   fastify.register(require('fastify-axios'), {
     v1: {
       baseUrl: 'https://v1.api.com',
