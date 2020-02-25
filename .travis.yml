@@ -7,7 +7,7 @@ node_js:
   - "10"
 
 install:
-  - npm install -g codecov tap nyc
+  - npm install -g codecov
 
 script:
   - npm run coverage
