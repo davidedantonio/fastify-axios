@@ -78,3 +78,6 @@ module.exports = async function (fastify, opts, next) {
 }
 ```
 
+## License
+
+Licensed under [MIT](./LICENSE)
