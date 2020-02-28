@@ -43,13 +43,31 @@ test('fastify.axios should be an axios instance', t => {
 })
 
 test('verify default args', t => {
-  t.plan(2)
+  t.plan(4)
   const fastify = Fastify()
-  fastify.register(axiosPlugin, { baseURL: 'https://nodejs.org' })
+  fastify.register(axiosPlugin, {
+    baseURL: 'https://nodejs.org',
+    interceptors: {
+      request: function (config) {
+        console.log(config)
+      },
+      errorRequest: function (error) {
+        console.log(error)
+      },
+      response: function (config) {
+        console.log(config)
+      },
+      errorResponse: function (error) {
+        console.log(error)
+      }
+    }
+  })
 
   fastify.ready(async err => {
     t.error(err)
     t.equal(fastify.axios.defaults.baseURL, 'https://nodejs.org')
+    t.equal(typeof fastify.axios.interceptors.request, 'object')
+    t.equal(typeof fastify.axios.interceptors.response, 'object')
 
     fastify.close()
   })
@@ -81,7 +99,21 @@ test('fastify.axios register multiple clients', t => {
         baseURL: 'https://nodejs.org'
       },
       google: {
-        baseURL: 'https://google.com'
+        baseURL: 'https://google.com',
+        interceptors: {
+          request: function (config) {
+            console.log(config)
+          },
+          errorRequest: function (error) {
+            console.log(error)
+          },
+          response: function (config) {
+            console.log(config)
+          },
+          errorResponse: function (error) {
+            console.log(error)
+          }
+        }
       }
     }
   })
