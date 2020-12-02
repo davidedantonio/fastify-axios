@@ -1,6 +1,6 @@
 # fastify-axios
 
-[![Build Status](https://travis-ci.com/davidedantonio/fastify-axios.svg?branch=master)](https://travis-ci.com/davidedantonio/create-fastify-app) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/davidedantonio/fastify-axios.svg)](https://greenkeeper.io/) [![codecov](https://codecov.io/gh/davidedantonio/fastify-axios/branch/master/graph/badge.svg)](https://codecov.io/gh/davidedantonio/fastify-axios)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/davidedantonio/fastify-axios) [![codecov](https://codecov.io/gh/davidedantonio/fastify-axios/branch/master/graph/badge.svg)](https://codecov.io/gh/davidedantonio/fastify-axios)
 
 
 A plugin for Fastify that adds support for sending requests via [`axios`](https://github.com/axios/axios), a promise based HTTP(s) client for node.js and browser.
