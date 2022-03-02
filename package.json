@@ -27,7 +27,7 @@
   "homepage": "https://github.com/davidedantonio/fastify-axios#readme",
   "dependencies": {
     "axios": "^0.25.0",
-    "fastify-plugin": "^3.0.0"
+    "fastify-plugin": "^3.0.1"
   },
   "devDependencies": {
     "fastify": "^3.22.0",
