@@ -30,9 +30,9 @@
     "fastify-plugin": "^3.0.1"
   },
   "devDependencies": {
-    "fastify": "^3.22.0",
+    "fastify": "^3.27.2",
     "pre-commit": "^1.2.2",
     "standard": "^16.0.4",
-    "tap": "^15.0.10"
+    "tap": "^15.1.6"
   }
 }
