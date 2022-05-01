@@ -24,6 +24,9 @@
   "bugs": {
     "url": "https://github.com/davidedantonio/fastify-axios/issues"
   },
+  "tap": {
+    "check-coverage": false
+  },
   "homepage": "https://github.com/davidedantonio/fastify-axios#readme",
   "dependencies": {
     "axios": "^0.26.1",
