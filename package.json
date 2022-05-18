@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/davidedantonio/fastify-axios#readme",
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "fastify-plugin": "^3.0.1"
   },
   "devDependencies": {
