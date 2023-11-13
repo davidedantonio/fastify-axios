@@ -25,17 +25,16 @@
     "url": "https://github.com/davidedantonio/fastify-axios/issues"
   },
   "tap": {
-    "check-coverage": false
   },
   "homepage": "https://github.com/davidedantonio/fastify-axios#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "fastify-plugin": "^4.2.1",
-    "tap": "^16.3.0"
+    "fastify-plugin": "^4.2.1"
   },
   "devDependencies": {
     "fastify": "^4.8.1",
     "pre-commit": "^1.2.2",
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "tap": "^18.5.7"
   }
 }
