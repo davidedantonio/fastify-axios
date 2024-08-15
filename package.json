@@ -27,7 +27,7 @@
   "tap": {},
   "homepage": "https://github.com/davidedantonio/fastify-axios#readme",
   "dependencies": {
-    "axios": "^1.6.4",
+    "axios": "^1.7.4",
     "fastify-plugin": "^4.5.1"
   },
   "devDependencies": {
