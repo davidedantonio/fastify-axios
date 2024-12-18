@@ -2,6 +2,8 @@
   "name": "fastify-axios",
   "version": "1.2.10",
   "description": "Decorate fastify instance with axios http client",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
   "main": "index.js",
   "scripts": {
     "lint": "standard",
