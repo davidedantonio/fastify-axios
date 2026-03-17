@@ -30,6 +30,13 @@
     "nodejs"
   ],
   "author": "Davide D'Antonio <davide.dantonio1984@gmail.com>",
+  "contributors": [
+    {
+      "name": "Emiliano Bruni",
+      "url": "https://github.com/EmilianoBruni",
+      "author": true
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/davidedantonio/fastify-axios/issues"
