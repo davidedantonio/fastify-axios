@@ -1,5 +1,9 @@
-import { FastifyPluginCallback } from "fastify";
-import { AxiosInstance, AxiosRequestConfig } from "axios";
+import { FastifyPluginAsync } from "fastify";
+import {
+  AxiosInstance,
+  AxiosRequestConfig,
+  InternalAxiosRequestConfig,
+} from "axios";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -9,11 +13,11 @@ declare module "fastify" {
 
 export interface AxiosInterceptors {
   request?: (
-    value: AxiosRequestConfig,
-  ) => AxiosRequestConfig | Promise<AxiosRequestConfig>;
-  errorRequest?: (error: any) => any;
+    value: InternalAxiosRequestConfig,
+  ) => InternalAxiosRequestConfig | Promise<InternalAxiosRequestConfig>;
+  errorRequest?: (error: unknown) => unknown;
   response?: (value: any) => any | Promise<any>;
-  errorResponse?: (error: any) => any;
+  errorResponse?: (error: unknown) => unknown;
 }
 
 export interface FastifyAxiosClientOptions extends AxiosRequestConfig {
@@ -25,6 +29,6 @@ export interface FastifyAxiosOptions extends AxiosRequestConfig {
   interceptors?: AxiosInterceptors;
 }
 
-declare const fastifyAxios: FastifyPluginCallback<FastifyAxiosOptions>;
+declare const fastifyAxios: FastifyPluginAsync<FastifyAxiosOptions>;
 
 export default fastifyAxios;
