@@ -1,6 +1,6 @@
 {
   "name": "fastify-axios",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Decorate fastify instance with axios http client",
   "type": "module",
   "types": "dist/index.d.ts",
